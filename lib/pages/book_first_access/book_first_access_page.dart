@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ioasys_books/pages/book_login/book_login_page.dart';
+import 'package:flutter_ioasys_books/shared/components/gradient.dart';
 import 'package:flutter_ioasys_books/shared/components/rounded_button.dart';
 
 class BooksFirstAccessPage extends StatelessWidget {
@@ -101,18 +102,7 @@ class BooksFirstAccessPage extends StatelessWidget {
                 40,
               ),
             ),
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [
-                Color(
-                  0xffec008c,
-                ),
-                Color(
-                  0xfffc6767,
-                ),
-              ],
-            ),
+            gradient: linearGradient,
           ),
         ),
         alignment: Alignment.centerRight,
