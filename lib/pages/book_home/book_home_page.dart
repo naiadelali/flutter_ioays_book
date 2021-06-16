@@ -47,6 +47,7 @@ class BookHomePage extends StatelessWidget {
                 padding: EdgeInsets.only(
                   top: 40,
                   left: 30,
+                  right: 30,
                 ),
                 width: size.width,
                 decoration: BoxDecoration(
