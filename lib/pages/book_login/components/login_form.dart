@@ -5,8 +5,8 @@ import 'package:flutter_ioasys_books/shared/components/input_text_form_field.dar
 import 'package:flutter_ioasys_books/shared/components/rounded_button.dart';
 
 class LoginFormPage extends StatelessWidget {
-  var _emailController = TextEditingController();
-  var _passwordController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return ListView(children: [

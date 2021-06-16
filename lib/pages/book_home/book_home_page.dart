@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ioasys_books/shared/components/gradient.dart';
+import '../../shared/components/gradient.dart';
 
 import 'components/book_app_bar.dart';
 import 'components/book_greetings_title.dart';
@@ -8,7 +8,7 @@ import 'components/book_section.dart';
 class BookHomePage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
-  var _heading = "Todos os livros";
+  final _heading = "Todos os livros";
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
