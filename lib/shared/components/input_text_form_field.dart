@@ -4,7 +4,7 @@ class InputTextField extends StatefulWidget {
   final TextEditingController controller;
   final String labelText;
   final Function(String)? onChanged;
-  bool obscureText;
+  final bool obscureText;
   final bool isVisibility;
 
   InputTextField(
@@ -15,11 +15,18 @@ class InputTextField extends StatefulWidget {
       this.isVisibility = false});
 
   @override
-  _InputTextFieldState createState() => _InputTextFieldState();
+  _InputTextFieldState createState() => _InputTextFieldState(
+        obscureText: obscureText,
+      );
 }
 
 class _InputTextFieldState extends State<InputTextField> {
-  @override
+  bool obscureText = false;
+
+  _InputTextFieldState({
+    this.obscureText = false,
+  });
+
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
@@ -29,7 +36,7 @@ class _InputTextFieldState extends State<InputTextField> {
         suffix: InkWell(
           onTap: () {
             setState(() {
-              widget.obscureText = !widget.obscureText;
+              obscureText = !obscureText;
             });
           },
           child: widget.isVisibility

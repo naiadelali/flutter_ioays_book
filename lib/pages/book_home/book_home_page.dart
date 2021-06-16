@@ -6,7 +6,7 @@ import 'components/book_greetings_title.dart';
 import 'components/book_section.dart';
 
 class BookHomePage extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final _heading = "Todos os livros";
   @override
