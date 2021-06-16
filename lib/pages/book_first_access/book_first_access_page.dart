@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ioasys_books/pages/book_login/book_login_page.dart';
-import 'package:flutter_ioasys_books/shared/components/gradient.dart';
-import 'package:flutter_ioasys_books/shared/components/rounded_button.dart';
+
+import '../../shared/components/gradient.dart';
+import '../../shared/components/rounded_button.dart';
+import '../book_login/book_login_page.dart';
 
 class BooksFirstAccessPage extends StatelessWidget {
   @override
