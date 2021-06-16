@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ioasys_books/pages/book_home/book_home_page.dart';
-import 'package:flutter_ioasys_books/pages/book_login/components/login_logo.dart';
-import 'package:flutter_ioasys_books/shared/components/input_text_form_field.dart';
-import 'package:flutter_ioasys_books/shared/components/rounded_button.dart';
+
+import '../../../shared/components/input_text_form_field.dart';
+import '../../../shared/components/rounded_button.dart';
+import '../../book_home/book_home_page.dart';
+import 'login_logo.dart';
 
 class LoginFormPage extends StatelessWidget {
   final _emailController = TextEditingController();

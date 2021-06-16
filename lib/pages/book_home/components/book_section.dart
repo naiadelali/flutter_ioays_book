@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ioasys_books/pages/book_home/components/book_heading.dart';
-import 'package:flutter_ioasys_books/shared/models/book_model.dart';
+
+import '../../../shared/models/book_model.dart';
+import 'book_heading.dart';
 
 class BookSection extends StatelessWidget {
   final String heading;

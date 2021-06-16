@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ioasys_books/shared/components/gradient.dart';
+import '../../../shared/components/gradient.dart';
 
 class BookAppBar extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
