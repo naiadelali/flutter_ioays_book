@@ -7,7 +7,7 @@ class BookLoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final formKey = new GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
