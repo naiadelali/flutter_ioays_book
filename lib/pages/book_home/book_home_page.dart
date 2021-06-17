@@ -8,7 +8,7 @@ import 'components/book_section.dart';
 class BookHomePage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final _heading = "Todos os livros";
+  final _heading = 'Todos os livros';
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -31,18 +31,18 @@ class BookHomePage extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      BookGreetingsTitle(
-                        username: "Lali",
-                      ),
-                      BookSection(
+                child: Column(
+                  children: [
+                    BookGreetingsTitle(
+                      username: 'Lali',
+                    ),
+                    Expanded(
+                      child: BookSection(
                         heading: _heading,
                         bookList: [],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
                 padding: EdgeInsets.only(
                   top: 40,

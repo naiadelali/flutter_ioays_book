@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../shared/constants/colors.dart';
 
 class BookHeading extends StatelessWidget {
   final String heading;
@@ -20,7 +21,7 @@ class BookHeading extends StatelessWidget {
           heading,
           style: TextStyle(
             fontSize: 24.0,
-            color: Color(0XFF707070),
+            color: kGrayDarkColor,
           ),
         ),
       ],

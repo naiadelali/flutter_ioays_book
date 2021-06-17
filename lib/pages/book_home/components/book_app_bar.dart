@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../../../shared/components/gradient.dart';
+import '../../../shared/constants/colors.dart';
 
 class BookAppBar extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -12,17 +14,28 @@ class BookAppBar extends StatelessWidget {
       flexibleSpace: Container(
         padding: EdgeInsets.only(
           left: 30,
-          top: 10,
+          top: 50,
+          right: 30
         ),
         alignment: Alignment.centerLeft,
-        child: IconButton(
-          icon: Image.asset('assets/images/menu.png'),
-          onPressed: () => scaffoldKey.currentState!.openDrawer(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+              icon: Image.asset('assets/images/menu.png'),
+              onPressed: () => scaffoldKey.currentState!.openDrawer(),
+            ),
+            IconButton(
+              icon: Icon(Icons.search, color: kWhiteColor),
+              onPressed: () => null,
+            ),
+          ],
         ),
         decoration: BoxDecoration(
           gradient: linearGradient,
         ),
       ),
+      centerTitle: true,
       automaticallyImplyLeading: false, // Don't show the leading button
       bottomOpacity: 0.0,
       elevation: 0.0,

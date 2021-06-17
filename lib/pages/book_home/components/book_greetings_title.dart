@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../shared/constants/colors.dart';
 
 class BookGreetingsTitle extends StatelessWidget {
   final String username;
@@ -8,32 +9,32 @@ class BookGreetingsTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Olá,",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-              ),
+        RichText(
+          text: TextSpan(
+            text: 'Olá, ',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+              color: kGrayColor,
             ),
-            Text(
-              username,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-          ],
+            children: <TextSpan>[
+              TextSpan(
+                  text: username,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    color: kTextColor,
+                  )),
+            ],
+          ),
         ),
         Align(
           alignment: Alignment.topLeft,
           child: Container(
             margin: EdgeInsets.only(
               top: 15,
-              bottom: 30,
+              bottom: 20,
             ),
             width: 150,
             height: 5,
