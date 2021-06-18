@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../shared/constants/colors.dart';
 
+import '../../../shared/constants/colors.dart';
 import '../../../shared/models/book_model.dart';
+import '../../book_details/book_details_page.dart';
 import 'book_heading.dart';
 
 class BookSection extends StatelessWidget {
