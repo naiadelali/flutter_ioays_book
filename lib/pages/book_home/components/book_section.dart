@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../shared/constants/colors.dart';
 
 import '../../../shared/models/book_model.dart';
 import '../../book_details/book_details_page.dart';
@@ -21,69 +22,68 @@ class BookSection extends StatelessWidget {
               vertical: 10,
             ),
             child: GridView.count(
+              padding: EdgeInsets.only(top: 100),
               primary: false,
               crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
+              mainAxisSpacing: 110,
               crossAxisCount: 2,
-              children: <Widget>[
-                GestureDetector(
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => BookDetailsPage(),
-                    ),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    child: const Text(""),
-                    color: Colors.teal[100],
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text(''),
-                  color: Colors.teal[200],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text(''),
-                  color: Colors.teal[300],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text(''),
-                  color: Colors.teal[400],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text(''),
-                  color: Colors.teal[500],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text(''),
-                  color: Colors.teal[600],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text(''),
-                  color: Colors.teal[400],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text(''),
-                  color: Colors.teal[500],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text(''),
-                  color: Colors.teal[600],
-                ),
-              ],
+              children: List.generate(10, buildBookContainer),
             ),
           ),
         )
       ],
     );
   }
+
+  Widget buildBookContainer(int index) => Stack(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: kWhiteColor,
+              border: Border.all(color: kWhiteColor),
+              borderRadius: BorderRadius.all(
+                Radius.circular(30),
+              ),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'A Culpa é das Estrelas',
+                  maxLines: 2,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: kprimaryColor,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'Jonh Green',
+                  maxLines: 1,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: kGrayColor,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            transform: Matrix4.translationValues(0, -80, 0),
+            child: Center(
+              child: Image.network(
+                'https://files-books.ioasys.com.br/Book-0.jpg',
+                height: 150,
+              ),
+            ),
+          ),
+        ],
+      );
 }
