@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../shared/components/gradient.dart';
 
-import 'book_details_app_bar.dart';
 
 class BookDetailsBackground extends StatelessWidget {
   final Size size;
