@@ -21,6 +21,7 @@ class BookSection extends StatelessWidget {
               vertical: 10,
             ),
             child: GridView.count(
+              physics: BouncingScrollPhysics(),
               padding: EdgeInsets.only(top: 100),
               primary: false,
               crossAxisSpacing: 10,
