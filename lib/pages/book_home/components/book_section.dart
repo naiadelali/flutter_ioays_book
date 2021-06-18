@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../shared/models/book_model.dart';
+import '../../book_details/book_details_page.dart';
 import 'book_heading.dart';
 
 class BookSection extends StatelessWidget {
@@ -25,10 +26,18 @@ class BookSection extends StatelessWidget {
               mainAxisSpacing: 10,
               crossAxisCount: 2,
               children: <Widget>[
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Text(""),
-                  color: Colors.teal[100],
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BookDetailsPage(),
+                    ),
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    child: const Text(""),
+                    color: Colors.teal[100],
+                  ),
                 ),
                 Container(
                   padding: const EdgeInsets.all(8),
