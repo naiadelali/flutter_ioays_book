@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import '../../shared/components/gradient.dart';
 
+import '../../shared/components/gradient.dart';
+import 'book_home_controller.dart';
 import 'components/book_app_bar.dart';
 import 'components/book_greetings_title.dart';
 import 'components/book_section.dart';
 
 class BookHomePage extends StatelessWidget {
+  final controller = BookHomeController();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final _heading = 'Todos os livros';
@@ -39,7 +41,7 @@ class BookHomePage extends StatelessWidget {
                     Expanded(
                       child: BookSection(
                         heading: _heading,
-                        bookList: [],
+                        bookList: controller.books,
                       ),
                     ),
                   ],

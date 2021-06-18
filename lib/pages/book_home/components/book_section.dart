@@ -25,12 +25,12 @@ class BookSection extends StatelessWidget {
               physics: BouncingScrollPhysics(),
               padding: EdgeInsets.only(top: 100),
               primary: false,
-              crossAxisSpacing: 10,
+              crossAxisSpacing: 20,
               mainAxisSpacing: 110,
               crossAxisCount: 2,
               children: List.generate(
-                10,
-                (index) => buildBookContainer(index, context),
+                bookList.length,
+                (index) => _buildBookContainer(index, context, bookList[index]),
               ),
             ),
           ),
@@ -39,7 +39,12 @@ class BookSection extends StatelessWidget {
     );
   }
 
-  Widget buildBookContainer(int index, BuildContext context) => GestureDetector(
+  Widget _buildBookContainer(
+    int index,
+    BuildContext context,
+    BookModel book,
+  ) =>
+      GestureDetector(
         onTap: () {
           Navigator.push(
               context,
@@ -50,7 +55,13 @@ class BookSection extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.only(
+                top: 85,
+                left: 15,
+                right: 15,
+                bottom: 15,
+              ),
+              width: double.maxFinite,
               decoration: BoxDecoration(
                 color: kWhiteColor,
                 border: Border.all(color: kWhiteColor),
@@ -59,10 +70,10 @@ class BookSection extends StatelessWidget {
                 ),
               ),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    'A Culpa é das Estrelas',
+                    book.title,
                     maxLines: 2,
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -74,14 +85,16 @@ class BookSection extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  Text(
-                    'Jonh Green',
-                    maxLines: 1,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: kGrayColor,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 14,
+                  Flexible(
+                    child: Text(
+                      book.authors.first,
+                      maxLines: 1,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: kGrayColor,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
+                      ),
                     ),
                   ),
                 ],
@@ -91,7 +104,7 @@ class BookSection extends StatelessWidget {
               transform: Matrix4.translationValues(0, -80, 0),
               child: Center(
                 child: Image.network(
-                  'https://files-books.ioasys.com.br/Book-0.jpg',
+                  book.imageUrl,
                   height: 150,
                 ),
               ),
